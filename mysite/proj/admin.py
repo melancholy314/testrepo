@@ -1,13 +1,25 @@
 from django.contrib import admin
-from .models import Test
+from .models import spektakl, mesta
 
 # Register your models here.
 
-class TestAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ('Test 1', {'fields': ['field1']}),
-        ('Test 2', {'fields': ['field2']}),
-        ('Test 3', {'fields': ['field3']})
+class spektaklAdmin(admin.ModelAdmin):
+    fieldsets1 = [
+        ('id', {'fields': ['id']}),
+        ('nazvanie', {'fields': ['nazvanie']})
     ]
 
-admin.site.register(Test, TestAdmin)
+class mestaAdmin(admin.ModelAdmin):
+    fieldsets2 = [
+        ('id', {'fields': ['id']}),
+        ('spektakl', {'fields': ['spektakl']}),
+        ('sektor', {'fields': ['sektor']}),
+        ('mesto', {'fields': ['mesto']}),
+        ('tel', {'fields': ['tel']}),
+        ('sms', {'fields': ['sms']}),
+        ('time', {'fields': ['time']}),
+
+    ]
+
+admin.site.register(spektakl, spektaklAdmin)
+admin.site.register(mesta, mestaAdmin)

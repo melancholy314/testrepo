@@ -13,33 +13,71 @@
     <thead>
         <tr>
             <th>
-                Test1
+                id
             </th>
             <th>
-                Test2
-            </th>
-            <th>
-                Test3
+                nazvanie
             </th>
         </tr>
     </thead>
     <tbody>
-    {% for result in Test%}
+    {% for result in spektakl%}
     <tr>
-        <td>{{result.field1}}</td>
-        <td>{{result.field2}}</td>
-        <td>{{result.field3}}</td>
+        <td>{{result.id}}</td>
+        <td>{{result.nazvanie}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                spektakl
+            </th>
+             <th>
+                sektor
+            </th>
+             <th>
+                mesto
+            </th>
+             <th>
+                tel
+            </th>
+             <th>
+                sms
+            </th>
+            <th>
+                time
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for result in mesta%}
+    <tr>
+        <td>{{result.id}}</td>
+        <td>{{result.spektakl}}</td>
+        <td>{{result.sektor}}</td>
+        <td>{{result.mesto}}</td>
+        <td>{{result.tel}}</td>
+        <td>{{result.sms}}</td>
+        <td>{{result.time}}</td>
+
     </tr>
     {% endfor %}
     </tbody>
 </table>
 <br>
 <h1>Add Function</h1>
-    {% for result in Test %}
+    {% for result in mesta %}
         <p>
-            Sum of {{result.field2}}
-            and {{result.field3}}
-            is {{result.field2|add:result.field3}}
+            Sum of {{result.id}}
+            and {{result.sms}}
+            is {{result.id|add:result.sms}}
         </p>
     {% endfor %}
 </body>
